@@ -36,7 +36,8 @@
 				class="py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in dark:bg-gray-500 text-dark-600 dark:text-white"
 				>Kinh Địa Tạng</a
 			>
-			<ThemeSwitch />
+			<!-- TODO: Check back on ThemeSwitch -->
+			<!-- <ThemeSwitch /> -->
 		</nav>
 	{/if}
 

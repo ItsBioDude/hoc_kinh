@@ -20,7 +20,8 @@
 	<!-- style="background-image: linear-gradient(to bottom right,#fdd9aa,#f1c89b)" -->
 	<div class="text-center prose z-1 flex-col flex-center justify-self-center">
 		<h1>HỌC THUỘC KINH</h1>
-		<ThemeSwitch width={40} height={40} />
+		<!-- <ThemeSwitch width={40} height={40} /> -->
+		<!-- TODO: Check back on ThemeSwitch -->
 	</div>
 	<div
 		class="place-self-center z-1 flex lt-sm:text-xl text-lg lg:text-xl gap-4"

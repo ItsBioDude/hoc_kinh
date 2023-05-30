@@ -5,7 +5,29 @@
 	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
 	import type { LayoutData } from './$types';
+	import { hotKeyAction, mediaQuery } from 'svelte-legos';
+	// import { storage } from 'svelte-legos';
+	// import { writable } from 'svelte/store';
 
+	import { browser } from '$app/environment';
+
+	let allowToSee: boolean;
+	if (browser) {
+		// localStorage.allowToSee === 'true' ||
+		if (!('allowToSee' in localStorage)) {
+			allowToSee = false;
+		} else {
+			allowToSee = true;
+		}
+	}
+	const handleClick = () => {
+		localStorage.setItem('allowToSee', 'true');
+		allowToSee = true;
+	};
+	// const allowToSee = storage(writable(false), 'allowToSee');
+	const isSmallScreen = mediaQuery('(max-width: 1024px)');
+	// $: allowToSee = false;
+	$: allowToSee;
 	export let data: LayoutData;
 
 	// $: ({ supabase, session } = data);
@@ -37,6 +59,29 @@
 >
 <!-- <svelte:body  /> -->
 <!-- {#key data.pathname} -->
+{#if !allowToSee && $isSmallScreen}
+	<div
+		class="fixed top-0 left-0 h-screen w-screen backdrop-blur backdrop-brightness-80 z-100 flex justify-center items-center font-title"
+	>
+		<div class="bg-white border rounded p-6 text-lg flex-col flex-center gap-2">
+			Small screen devices (Phones, Tablet) is not Supported!
+			<button
+				on:click={handleClick}
+				use:hotKeyAction={{
+					code: 'Escape',
+					cb: handleClick,
+				}}
+				class="px-5 py-2.5 relative rounded group overflow-hidden font-medium bg-purple-50 text-purple-600 inline-block cursor-pointer font-bold text-base flex-shrink w-max"
+			>
+				<span
+					class="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-purple-600 group-hover:h-full opacity-90"
+				/>
+				<span class="relative group-hover:text-white">Bỏ Qua</span>
+			</button>
+		</div>
+	</div>
+{/if}
+
 {#key data.url}
 	<!-- transition:fade -->
 	<div
@@ -47,4 +92,5 @@
 		<slot />
 	</div>
 {/key}
+
 <!-- {/key} -->
