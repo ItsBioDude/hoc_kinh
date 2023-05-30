@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import 'virtual:uno.css';
 	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
@@ -8,19 +8,7 @@
 
 	export let data: LayoutData;
 
-	$: ({ supabase, session } = data);
-
-	onMount(() => {
-		const {
-			data: { subscription },
-		} = supabase.auth.onAuthStateChange((event, _session) => {
-			if (_session?.expires_at !== session?.expires_at) {
-				invalidate('supabase:auth');
-			}
-		});
-
-		return () => subscription.unsubscribe();
-	});
+	// $: ({ supabase, session } = data);
 	// import type { LayoutData } from './$types';
 </script>
 
@@ -47,11 +35,16 @@
 	<meta name="msapplication-TileColor" content="#da532c" />
 	<meta name="theme-color" content="#ffffff" /></svelte:head
 >
+<!-- <svelte:body  /> -->
 <!-- {#key data.pathname} -->
-<div
-	transition:fade
-	class="max-h-screen font-content dark:bg-gray-800 dark:text-white"
->
-	<slot />
-</div>
+{#key data.url}
+	<!-- transition:fade -->
+	<div
+		in:fly={{ y: -100, duration: 500, delay: 500 }}
+		out:fly={{ y: 100, duration: 500 }}
+		class="max-h-screen font-content dark:bg-gray-800 dark:text-white"
+	>
+		<slot />
+	</div>
+{/key}
 <!-- {/key} -->
