@@ -37,23 +37,12 @@
 			/>
 			Kinh Địa Tạng Bồ Tát Bổn Nguyện</a
 		>
-		<a
-			href="{base}/guru_rinpoche"
-			class="flex flex-col items-center no-underline text-black dark:text-white font-bold"
-		>
-			<img
-				class="w-18 h-18 md:(w-24 h-24) p-2 lg:(w-30 h-30) mb-2 rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out bg-white dark:bg-dark"
-				src="{base}/hung.png"
-				style="object-fit: cover;object-position: center;"
-				alt=""
-			/>
-			Guru Rinpoche</a
-		>
+		<!--
 		<a
 			href="{base}/table"
 			class="flex flex-col items-center no-underline text-black dark:text-white font-bold"
 		>
-			<!-- class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in" -->
+			<!-- class="text-sm py-2 px-4 cursor-pointer rounded-md flex items-center border-none gap-2 hover:border-gray text-dark-600 bg-white decoration-none hover:border-gray-900 hover:shadow transition-all ease-in" COMMENT->
 
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +53,7 @@
 					d="M3 8V3h19v5H3Zm5 2v11H3V10h5Zm14 11h-5V10h5v11Zm-7-11v11h-5V10h5Z"
 				/></svg
 			>Table</a
-		>
+		>-->
 	</div>
 	<picture
 		class="self-center justify-self-start col-start-1 lt-sm:(blur absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2) sm:(col-start-2 row-start-1 row-span-2)"

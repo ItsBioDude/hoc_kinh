@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"gen-data": "node scripts/sayi_nyingpo.js"
 	},
 	"devDependencies": {
 		"@supabase/auth-helpers-sveltekit": "^0.10.0",

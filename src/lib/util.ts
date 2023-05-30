@@ -1,1 +1,1 @@
-export const getRanInt = (max: number) => Math.floor(Math.random() * max);
+export const RanInt = (max: number) => Math.floor(Math.random() * max);
