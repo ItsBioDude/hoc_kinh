@@ -57,7 +57,7 @@
 </svelte:head>
 
 <div class="h-screen sm:overflow-hidden">
-	<StatisticPage pictureName="sayi_nyingpo-new.jpg">
+	<StatisticPage pictureName="sayi_nyingpo.jpg">
 		<!-- TODO: Check back on fixing view width -->
 		<div
 			class="flex flex-col gap-2 md:gap-4 m-2 p-2

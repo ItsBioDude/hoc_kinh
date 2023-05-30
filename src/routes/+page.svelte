@@ -31,8 +31,8 @@
 		>
 			<img
 				class="w-18 h-18 md:(w-24 h-24) p-2 lg:(w-30 h-30) mb-2 bg-white dark:bg-dark rounded-lg hover:rounded-3xl duration-200 transition-all ease-in-out"
-				src="{base}/tam-new.png"
-				style="object-fit: cover;object-position: 50% 50%;;image-resolution: from-image;"
+				src="{base}/sayi_nyingpo-new.jpg"
+				style="object-fit: cover;object-position: 50% 50%;image-resolution: from-image;image-rendering: smooth;"
 				alt=""
 			/>
 			Kinh Địa Tạng Bồ Tát Bổn Nguyện</a
