@@ -2,13 +2,12 @@
 	import { presetUno } from 'unocss';
 	import { base } from '$app/paths';
 	import ThemeSwitch from '$lib/ThemeSwitch.svelte';
-
 	// export let data;
 	// TODO: Check back on svelte-fullpage
 </script>
 
 <svelte:head>
-	<title>Thực Hành</title>
+	<title>Học Kinh</title>
 </svelte:head>
 
 <!-- TODO: https://unocss.dev/presets/wind#breakpoints - Add breakpoints -->

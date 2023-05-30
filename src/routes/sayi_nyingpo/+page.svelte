@@ -6,7 +6,7 @@
 	// import { createForm } from 'felte';
 	// import { DateInput } from 'date-picker-svelte';
 	// import dayjs from 'dayjs';
-
+	import Card from '$lib/Card.svelte';
 	import { RanInt } from '$lib/util.ts';
 	import { timeoutFnStore, hotKeyAction } from 'svelte-legos';
 	const defaultLabelText = 'Vui lòng chờ 30s';
@@ -71,7 +71,7 @@
 				{#if e != ''}
 					<p
 						class={e.toUpperCase() == e
-							? 'font-bold text-base md:text-xl'
+							? 'font-bold text-base md:text-xl font-title'
 							: 'text-sm md:text-base'}
 					>
 						{e}
@@ -80,7 +80,8 @@
 			{/each}
 		</article>
 		<!-- Expand Area -->
-		<div class="p-4 bg-gray-100 rounded">
+		<Card>
+			<!-- <div class="p-4 bg-gray-100 rounded"> -->
 			<button
 				on:click={toggle}
 				aria-expanded={isOpen}
@@ -89,7 +90,7 @@
 					cb: () => (isOpen = false),
 				}}
 				disabled={$isPending}
-				class="border-none bg-transparent flex items-center text-base gap-2 {$isPending
+				class="border-none font-title font-bold text-lg bg-transparent flex items-center text-base gap-1 {$isPending
 					? 'cursor-not-allowed'
 					: 'cursor-pointer'}"
 				><svg
@@ -108,7 +109,7 @@
 			{#if isOpen}
 				<article
 					transition:slide={{ duration: 300 }}
-					class="ml-6 overflow-y-scroll max-h-40vh scrollbar scrollbar-rounded dark:(scrollbar-track-color-gray-700 scrollbar-thumb-color-gray-600) p-2 rounded mt-2"
+					class="ml-4 overflow-y-scroll max-h-40vh scrollbar scrollbar-rounded dark:(scrollbar-track-color-gray-700 scrollbar-thumb-color-gray-600) p-2 rounded mt-2"
 				>
 					<!-- {#each [1, 2, 3] as item}
 							<p>{item}</p>
@@ -118,7 +119,7 @@
 						{#if e != ''}
 							<p
 								class="{e.toUpperCase() == e
-									? 'font-bold text-base md:text-xl'
+									? 'font-bold text-base md:text-xl font-title'
 									: 'text-sm md:text-base'}
 											{e == selectedPara[0] ||
 								e == selectedPara[1] ||
@@ -133,7 +134,8 @@
 					{/each}
 				</article>
 			{/if}
-		</div>
+		</Card>
+		<!-- </div> -->
 
 		<!-- Refetch data -->
 		<button
