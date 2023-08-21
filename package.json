@@ -21,6 +21,6 @@
 	"dependencies": {
 		"svelte-infinite-scroll": "^2.0.1",
 		"svelte-legos": "^0.2.1",
-		"unocss": "^0.53.1"
+		"unocss": "^0.55.2"
 	}
 }
